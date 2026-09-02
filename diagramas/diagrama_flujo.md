@@ -4,12 +4,14 @@ flowchart TD
     A --> B[/Capturar datos del asistente/]
     B --> C{¿Datos completos?}
 
-    C -->|Sí| D[Registrar asistente]
-    D --> E[/Mostrar confirmación/]
+    C -->|Sí| D{¿El correo existe?}
+    C --> |No| F[/Mostrar Datos faltantantes/]
 
-    C -->|No| F[/Mostrar datos faltantes/]
-    F --> E
+    D --> |Sí|E[/Advertencia/]
+    D --> |No|G[Registro]
 
-    E --> G([Fin])
+    E --> H([Fin])
+    F --> H([Fin])
+    G --> H([Fin])
     ```
     
